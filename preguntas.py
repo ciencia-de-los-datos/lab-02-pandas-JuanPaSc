@@ -248,14 +248,13 @@ def pregunta_13():
 
     df13_0 = tbl0.copy()
     df13_2 = tbl2.copy()
-    df13_0.pop("_c2")
-    df13_0.pop("_c3")
-    df13_2.pop("_c5a")
     df13 = pd.merge(
         df13_0,
         df13_2,
         on="_c0",
     )
-    df13.pop("_c0")
     df13 = df13.groupby("_c1").agg({"_c5b": "sum"})
     return df13["_c5b"]
+
+
+print(pregunta_13())
