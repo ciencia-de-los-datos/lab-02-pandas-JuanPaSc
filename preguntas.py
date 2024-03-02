@@ -67,7 +67,8 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    return tbl0[["_c1", "_c2"]].groupby("_c1").agg({"_c2": "mean"})
+    df4 = tbl0[["_c1", "_c2"]].groupby("_c1").agg({"_c2": "mean"})
+    return df4["_c2"]
 
 
 def pregunta_05():
@@ -84,7 +85,8 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return tbl0[["_c1", "_c2"]].groupby("_c1").max()
+    df5 = tbl0[["_c1", "_c2"]].groupby("_c1").max()
+    return df5["_c2"]
 
 
 def pregunta_06():
@@ -114,7 +116,8 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return tbl0[["_c1", "_c2"]].groupby("_c1").sum()
+    df7 = tbl0[["_c1", "_c2"]].groupby("_c1").sum()
+    return df7["_c2"]
 
 
 def pregunta_08():
@@ -254,5 +257,5 @@ def pregunta_13():
         on="_c0",
     )
     df13.pop("_c0")
-
-    return df13.groupby("_c1").sum()
+    df13 = df13.groupby("_c1").sum()
+    return df13["_c5b"]
