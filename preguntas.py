@@ -182,7 +182,7 @@ def pregunta_10():
     )
 
 
-print(pregunta_10())
+# print(pregunta_10())
 
 
 def pregunta_11():
