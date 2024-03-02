@@ -258,7 +258,7 @@ def pregunta_13():
     )
     df13.pop("_c0")
     df13 = df13.groupby("_c1", as_index=True).sum()
-    return df13
+    return df13.squeeze()
 
 
 print(pregunta_13())
