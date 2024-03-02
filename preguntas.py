@@ -246,19 +246,16 @@ def pregunta_13():
     Name: _c5b, dtype: int64
     """
 
-    # df13_0 = tbl0.copy()
-    # df13_2 = tbl2.copy()
-    # df13_0.pop("_c2")
-    # df13_0.pop("_c3")
-    # df13_2.pop("_c5a")
-    # df13 = pd.merge(
-    #     df13_0,
-    #     df13_2,
-    #     on="_c0",
-    # )
-    # df13.pop("_c0")
-    # df13 = df13.groupby("_c1").agg({"_c5b": "sum"})
-    return pd.Series({"A": 146, "B": 134, "C": 81, "D": 112, "E": 275})
-
-
-print(pregunta_13())
+    df13_0 = tbl0.copy()
+    df13_2 = tbl2.copy()
+    df13_0.pop("_c2")
+    df13_0.pop("_c3")
+    df13_2.pop("_c5a")
+    df13 = pd.merge(
+        df13_0,
+        df13_2,
+        on="_c0",
+    )
+    df13.pop("_c0")
+    df13 = df13.groupby("_c1").agg({"_c5b": "sum"})
+    return df13["_c5b"]
