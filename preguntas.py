@@ -245,25 +245,20 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    join = pd.merge(tbl0, tbl2, on="_c0", how="inner")
-    sumatablas = join[["_c1", "_c5b"]].groupby(["_c1"]).sum()
-    R13 = sumatablas.squeeze()
-    return R13
+
+    df13_0 = tbl0.copy()
+    df13_2 = tbl2.copy()
+    df13_0.pop("_c2")
+    df13_0.pop("_c3")
+    df13_2.pop("_c5a")
+    df13 = pd.merge(
+        df13_0,
+        df13_2,
+        on="_c0",
+    )
+    df13.pop("_c0")
+    df13 = df13.groupby("_c1").agg("sum")
+    return df13["_c5b"]
 
 
-#     df13_0 = tbl0.copy()
-#     df13_2 = tbl2.copy()
-#     df13_0.pop("_c2")
-#     df13_0.pop("_c3")
-#     df13_2.pop("_c5a")
-#     df13 = pd.merge(
-#         df13_0,
-#         df13_2,
-#         on="_c0",
-#     )
-#     df13.pop("_c0")
-#     df13 = df13.groupby("_c1", as_index=True).agg("sum")
-#     return df13["_c5b"]
-
-
-# print(pregunta_13())
+print(pregunta_13())
