@@ -177,12 +177,9 @@ def pregunta_10():
 
     df10 = tbl0.copy()
     df10 = tbl0[["_c1", "_c2"]]
-    return df10.groupby("_c1", as_index=False).agg(
+    return df10.groupby("_c1", as_index=True).agg(
         {"_c2": lambda x: ":".join(map(str, sorted(x)))}
     )
-
-
-# print(pregunta_10())
 
 
 def pregunta_11():
