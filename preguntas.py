@@ -254,7 +254,7 @@ def pregunta_13():
         on="_c0",
     )
     df13 = df13.groupby("_c1").agg({"_c5b": "sum"})
-    return df13["_c5b"]
+    return df13  # ["_c5b"]
 
 
 print(pregunta_13())
