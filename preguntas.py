@@ -257,5 +257,5 @@ def pregunta_13():
         on="_c0",
     )
     df13.pop("_c0")
-    df13 = df13.groupby("_c1").sum()
+    df13 = df13.groupby("_c1", as_index=False).sum()
     return df13["_c5b"]
