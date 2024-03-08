@@ -246,12 +246,12 @@ def pregunta_13():
     Name: _c5b, dtype: int64
     """
 
-    df13_0 = tbl0.copy()
-    df13_2 = tbl2.copy()
-    df13 = pd.merge(
-        df13_0,
-        df13_2,
-        on="_c0",
-    )
-    df13 = df13.groupby("_c1")["_c5b"].sum()  # .agg({"_c5b": "sum"})
+    #df13_0 = tbl0.copy()
+    #df13_2 = tbl2.copy()
+    #df13 = pd.merge(
+    #    df13_0,
+    #    df13_2,
+    #    on="_c0",
+    #)
+    #df13 = df13.groupby("_c1")["_c5b"].sum()  # .agg({"_c5b": "sum"})
     return tbl0.merge(tbl2, on='_c0').groupby('_c1')['_c5b'].sum()
