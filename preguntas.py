@@ -255,3 +255,4 @@ def pregunta_13():
     #)
     #df13 = df13.groupby("_c1")["_c5b"].sum()  # .agg({"_c5b": "sum"})
     return tbl0.merge(tbl2, on='_c0').groupby('_c1')['_c5b'].sum()
+
